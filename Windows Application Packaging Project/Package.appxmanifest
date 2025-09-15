@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Package
+  xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
+  xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+  xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
+  xmlns:iot="http://schemas.microsoft.com/appx/manifest/iot/windows10"
+  xmlns:uap18="http://schemas.microsoft.com/appx/manifest/uap/windows10/18"
+  IgnorableNamespaces="uap rescap iot uap18">
+
+  <Identity
+    Name="93724676-ca58-43f5-b4d3-be58e1065ab4"
+    Publisher="CN=Korisnik"
+    Version="1.0.19.0" />
+
+  <Properties>
+    <DisplayName>Sudoku</DisplayName>
+    <PublisherDisplayName>Korisnik</PublisherDisplayName>
+    <Logo>Untitled.png</Logo>
+  </Properties>
+
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.0.0" MaxVersionTested="10.0.0.0" />
+    <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.14393.0" MaxVersionTested="10.0.14393.0" />
+  </Dependencies>
+
+  <Resources>
+    <Resource Language="x-generate"/>
+  </Resources>
+
+  <Applications>
+    <Application Id="App"
+      Executable="$targetnametoken$.exe"
+      EntryPoint="$targetentrypoint$" uap18:RuntimeBehavior="win32App">
+		<uap:VisualElements
+   DisplayName="Sudoku"
+   Description="Sudoku puzzle game"
+   BackgroundColor="transparent"
+   Square150x150Logo="Untitled 150.png"
+   Square44x44Logo="Untitled 44.png">
+			<uap:DefaultTile
+			  Square71x71Logo="Untitled 71.png"
+			  Wide310x150Logo="Untitled 310-150.png"
+			  Square310x310Logo="Untitled 310.png"/>
+		</uap:VisualElements>
+    </Application>
+  </Applications>
+
+  <Capabilities>
+    <rescap:Capability Name="runFullTrust" />
+  </Capabilities>
+</Package>
