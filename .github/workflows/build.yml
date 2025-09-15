@@ -13,31 +13,20 @@ jobs:
     runs-on: windows-latest
 
     steps:
-      # 1️⃣ Checkout your repository
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # 2️⃣ Setup NuGet
       - name: Setup NuGet
         uses: NuGet/setup-nuget@v1
 
-      # 3️⃣ Restore NuGet packages for your solution
       - name: Restore NuGet packages
         run: nuget restore Sudoku_igra/Sudoku_igra.sln
 
-      # 4️⃣ Build the main solution
-      - name: Build Sudoku_igra solution
+      - name: Build solution
         run: msbuild Sudoku_igra/Sudoku_igra.sln /p:Configuration=Release
 
-      # 5️⃣ Build the Windows Application Packaging Project
-      - name: Build Packaging Project
-        run: msbuild "Windows Application Packaging Project/YourPackagingProject.csproj" /p:Configuration=Release
-
-      # 6️⃣ Collect build artifacts (optional)
       - name: Upload build artifacts
         uses: actions/upload-artifact@v3
         with:
           name: SudokuBuild
-          path: |
-            Sudoku_game/bin/Release
-            Windows Application Packaging Project/bin/Release
+          path: Sudoku_igra/bin/Release
